@@ -1,4 +1,4 @@
-# ServiceCo Website
+# ServiceCo Website (Continued)
 
 This is the source code for the **ServiceCo Website**, a PHP-based project.  
 The project runs on **Mac** using **XAMPP** as the local server and is managed with **GitHub Desktop**.
