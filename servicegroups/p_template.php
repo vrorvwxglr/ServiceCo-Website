@@ -178,6 +178,20 @@ $conn->close();
             }
         </style>
         <script>var egassem = "z9MbDcm43640Sb31q80Jkl4fN0TT5Fidg_7S7p1f8tqVh_maxnaW1KULYi4zatlmCSqboylWiwW4EdVHiqhh-wTIZogg5fYc4J3noN1o0c6bsH_LUM1pSb9Oo7ZeZ1CBbtbuOESmhcqtSAML1v-JtWen4nicbVQ_bf2j_61URHTENj9cufV-eTCVj5uoHp88";</script>
+        <script>
+            if (window.console) {
+                console.log(
+                    "%cStop!",
+                    "color: red; font-size: 40px; font-weight: bold;"
+                );
+
+                console.log(
+                    "%cThis is a browser feature intended for developers. " +
+                    "Writing code here may cause unintended consequences.",
+                    "font-size: 16px;"
+                );
+            }
+        </script>
     </head>
     <body>
         <header>
