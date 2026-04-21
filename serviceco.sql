@@ -21,6 +21,13 @@ CREATE TABLE products (
     FOREIGN KEY (service_group_id) REFERENCES service_groups(id) ON DELETE CASCADE
 );
 
+-- create users table
+CREATE TABLE users (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
 -- insert data into the service_groups table
 INSERT INTO service_groups (name, folder, email, color, logo, url, description) VALUES
 ('Angel Wishes', 'anglewishes', 'angelwishes@nist.ac.th', '#c2593a', './logo.png', './index.php', 'To raise awareness and promote learning on the realities of cancer and cancer treatment in the NIST community, in addition to providing social, emotional, and financial support to patients diagnosed with cancer and their loved ones, in partnership with Angel Foundation.'),
