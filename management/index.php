@@ -24,13 +24,27 @@
     </head>
     <body>
         <header>
-           
+            <a href="./index.php">
+                <img src="../logo.png" alt="ServiceCo Logo">
+            </a>
+            <h1>Management</h1>
         </header>
-
         <main>
-           
+            <p>Please login to continue.</p>
+            <section class="auth-section">
+                <h2>Login</h2>
+                <?php if (isset($_GET['error']) && $_GET['error'] === "invalid_login"): ?>
+                    <div class="error-message">
+                        Invalid username or password.
+                    </div>
+                <?php endif; ?>
+                <form action="action_page.php" method="POST">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </section>
         </main>
-
         <footer>
             <p>2026 ServiceCo</p>
         </footer>

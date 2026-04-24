@@ -1,0 +1,101 @@
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;           /* remove default margins */
+    padding-top: 20px;   /* add spacing above the header */
+}
+
+/* Header */
+header {
+    background: url("../header.png") no-repeat center center;
+    background-size: cover;   /* makes it scale to fit */
+    padding: 2em 0;
+    text-align: center;
+}
+
+/* Logo inside header */
+header img {
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+header a:hover img {
+    transform: scale(1.1);
+}
+
+/* Main*/
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #000;
+}
+
+h2 {
+    border-bottom: 2px solid #9077B1;
+    padding-bottom: 0.5em;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+/* Footer*/
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Authentication Section */
+.auth-section {
+    background: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    margin: 2em auto;
+}
+
+.auth-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-section input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth-section button {
+    padding: 10px;
+    background-color: #9077B1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-section button:hover {
+    background-color: #7a6398;
+}
+
+/* Error Message */
+.error-message {
+    background-color: #ffe5e5;
+    color: #b30000;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 0.9em;
+}

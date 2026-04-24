@@ -1,0 +1,86 @@
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;           /* remove default margins */
+    padding-top: 20px;   /* add spacing above the header */
+}
+
+/* Header */
+header {
+    background: url("../../header.png") no-repeat center center;
+    background-size: cover;   /* makes it scale to fit */
+    padding: 2em 0;
+    text-align: center;
+}
+
+/* Logo inside header */
+header img {
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+header a:hover img {
+    transform: scale(1.1);
+}
+
+/* Main*/
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #000;
+}
+
+h2 {
+    border-bottom: 2px solid #9077B1;
+    padding-bottom: 0.5em;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+/* Footer*/
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Admin Groups Table */
+.admin-section {
+    max-width: 1200px;
+    margin: 2em auto;
+}
+
+.groups-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    padding: 2em;
+    overflow: hidden;
+}
+
+.groups-table th,
+.groups-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.groups-table th {
+    background-color: #9077B1;
+    color: white;
+}
+
+.groups-table img {
+    width: 50px;
+    height: auto;
+}
