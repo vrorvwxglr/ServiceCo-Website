@@ -85,6 +85,53 @@ $conn->close();
                 color: #fff;
             }
 
+            /* Side Bar */
+            .menu-icon {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                font-size: 28px;
+                cursor: pointer;
+                z-index: 1001;
+            }
+
+            /* sidebar overlay */
+            .sidebar-content {
+                position: fixed;
+                top: 0;
+                right: -25vw; /* move same amount as width */
+                width: 25vw;
+                max-width: 250px;
+                min-width: 160px;
+
+                height: 100vh;
+                background: white;
+                box-shadow: -4px 0 10px rgba(0,0,0,0.2);
+                padding-top: 60px;
+                transition: right 0.3s ease;
+                z-index: 1000;
+                overflow-y: auto;
+                box-sizing: border-box;
+            }
+
+            /* side bar links */
+            .sidebar-content a {
+                display: block;
+                padding: 15px 20px;
+                text-decoration: none;
+                font-size: 18px;
+                color: #4e4e4e;
+            }
+
+            .sidebar-content a:hover {
+                background: #f5f5f5;
+            }
+
+            /* side bar open state */
+            .sidebar-content.open {
+                right: 0;
+            }
+
             main {
                 flex-grow: 1;
                 padding: 2em;
@@ -196,17 +243,34 @@ $conn->close();
     <body>
         <header>
             <a href="<?php echo htmlspecialchars($groupFolder . '/index.php'); ?>">
-                <img src="<?php echo htmlspecialchars($groupFolder . '/' . $groupLogo); ?>" 
-                    alt="<?php echo htmlspecialchars($groupName); ?> Logo">
+                <img src="<?php echo htmlspecialchars($groupFolder . '/' . $groupLogo); ?>" alt="<?php echo htmlspecialchars($groupName); ?> Logo">
             </a>
             <h1><?php echo htmlspecialchars($groupName); ?></h1>
+                        <div class="sidebar">
+                <div class="menu-icon" onclick="toggleMenu()">☰</div>
+                <div id="sidebar-content" class="sidebar-content">
+                    <?php foreach ($groups as $grp): ?>
+                        <a href="./servicegroups/<?php echo htmlspecialchars($grp['folder']); ?>/index.php"><?php echo htmlspecialchars($grp['name']); ?></a>
+                    <?php endforeach; ?>
+                </div>
+                <script>
+                    function toggleMenu() {
+                        document.getElementById("sidebar-content").classList.toggle("open");
+                    }
+
+                    addEventListener('click', function(event){
+                        if (!event.target.closest('.sidebar')) {
+                            document.getElementById("sidebar-content").classList.remove("open");
+                        }
+                    });
+                </script>
+            </div>
             <a href="../index.php" class="home-button">Back To ServiceCo</a>
         </header>
         <main>
             <section class="product-details">
                 <div class="product-image">
-                    <img src="<?php echo htmlspecialchars($groupFolder . '/' . $productImage); ?>" 
-                         alt="<?php echo htmlspecialchars($productName); ?>">
+                    <img src="<?php echo htmlspecialchars($groupFolder . '/' . $productImage); ?>" alt="<?php echo htmlspecialchars($productName); ?>">
                 </div>
                 <div class="product-info">
                     <h2><?php echo htmlspecialchars($productName); ?></h2>
