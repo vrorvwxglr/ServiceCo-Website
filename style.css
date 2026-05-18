@@ -39,11 +39,9 @@ header a:hover img {
 .sidebar-content {
     position: fixed;
     top: 0;
-    right: -25vw; /* move same amount as width */
-    width: 25vw;
+    right: -100%; /* hide the entire sidebar width */
+    width: clamp(160px, 25vw, 250px);
     max-width: 250px;
-    min-width: 160px;
-
     height: 100vh;
     background: white;
     box-shadow: -4px 0 10px rgba(0,0,0,0.2);
