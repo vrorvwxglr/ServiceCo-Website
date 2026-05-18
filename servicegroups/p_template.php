@@ -38,6 +38,21 @@ if ($service_group_result->num_rows > 0) {
     exit;
 }
 
+//Side Bar
+$groups = [];
+
+$result = $conn->query("SELECT name, folder FROM service_groups ORDER BY id ASC");
+
+/*Side Bar*/
+
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+
+        // sidebar list (ID order)
+        $groups[] = $row;
+    }
+}
+
 $conn->close();
 ?>
 
@@ -93,6 +108,7 @@ $conn->close();
                 font-size: 28px;
                 cursor: pointer;
                 z-index: 1001;
+                color: #000;
             }
 
             /* sidebar overlay */
@@ -250,7 +266,7 @@ $conn->close();
                 <div class="menu-icon" onclick="toggleMenu()">☰</div>
                 <div id="sidebar-content" class="sidebar-content">
                     <?php foreach ($groups as $grp): ?>
-                        <a href="./servicegroups/<?php echo htmlspecialchars($grp['folder']); ?>/index.php"><?php echo htmlspecialchars($grp['name']); ?></a>
+                        <a href="./<?php echo htmlspecialchars($grp['folder']); ?>/index.php"><?php echo htmlspecialchars($grp['name']); ?></a>
                     <?php endforeach; ?>
                 </div>
                 <script>
